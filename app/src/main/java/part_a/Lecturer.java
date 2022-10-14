@@ -49,7 +49,7 @@ public class Lecturer {
 
     @Override
     public String toString() {
-        return "Lecturer: " + name + "\nID" + ID + "\nModules teaching: " + modulesTeaching;
+        return "Lecturer: " + name + "\nID" + ID + "\nUsername: " + getUsername() + "\nModules teaching: " + modulesTeaching;
     }
     
 }

@@ -42,7 +42,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student: " + name + "\nID: " + ID + "\nCourses: " + courses + "\nModules: " + modules;
+        return "Student: " + name + "\nID: " + ID + "\nUsername: " + getUsername() +"\nCourses: " + courses + "\nModules: " + modules;
     }
 
 }
