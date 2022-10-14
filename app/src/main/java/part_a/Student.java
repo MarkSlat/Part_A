@@ -39,4 +39,10 @@ public class Student {
     public String getUsername() {
         return name + Integer.toString(age);
     }
+
+    @Override
+    public String toString() {
+        return "Student: " + name + "\nID: " + ID + "\nCourses: " + courses + "\nModules: " + modules;
+    }
+
 }

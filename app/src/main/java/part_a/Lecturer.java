@@ -46,5 +46,10 @@ public class Lecturer {
     public String getUsername() {
         return name + Integer.toString(age);
     }
+
+    @Override
+    public String toString() {
+        return "Lecturer: " + name + "\nID" + ID + "\nModules teaching: " + modulesTeaching;
+    }
     
 }

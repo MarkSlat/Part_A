@@ -46,4 +46,10 @@ public class Module {
         students.add(student);
     }
 
+    @Override
+    public String toString() {
+        return "Module: " + name + "\nModule ID:" + moduleID + "\nLecturer" + lecturerResponsible
+                + "\nCourses:" + courses + "\nStudents:" + students;
+    }
+
 }

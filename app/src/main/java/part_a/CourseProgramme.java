@@ -52,6 +52,13 @@ public class CourseProgramme {
     }
 
 
+    @Override
+    public String toString() {
+        return "Course Programme: " + name + "\nModules: " + modules + "\nStarting date: " + startDate + "\tEnd date: "
+                + endDate + "\nList of students enrolled:" + students;
+    }
+
+
     
 
     // DateTime startDate;
