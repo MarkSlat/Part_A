@@ -52,15 +52,15 @@ public class CourseProgramme {
     }
 
 
+    public String getInfo() {
+        return "Course Programme: " + name + "\nModules: " + modules + "\nStarting date: " + startDate + "\tEnd date: "
+                + endDate + "\nList of students enrolled:" + students;
+    }
+
     @Override
     public String toString() {
         return "Course Programme: " + name + "\nModules: " + modules + "\nStarting date: " + startDate + "\tEnd date: "
                 + endDate + "\nList of students enrolled:" + students;
     }
-
-
-    
-
-    // DateTime startDate;
 
 }
