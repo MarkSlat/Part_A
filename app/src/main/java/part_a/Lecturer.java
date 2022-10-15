@@ -43,7 +43,7 @@ public class Lecturer {
         modulesTeaching.add(module);
     }
 
-    public String getmMdulesTeachingNames() {
+    public String getMdulesTeachingNames() {
         String s = "";
         for (int i = 0; i < modulesTeaching.size(); i++) {
             s += modulesTeaching.get(i).getName() + " ";
@@ -57,7 +57,7 @@ public class Lecturer {
 
     @Override
     public String toString() {
-        return "Lecturer: " + name + "\nID: " + ID + "\nUsername: " + getUsername() + "\nModules teaching: " + getmMdulesTeachingNames();
+        return "Lecturer: " + name + "\nID: " + ID + "\nUsername: " + getUsername() + "\nModules teaching: " + getMdulesTeachingNames();
     }
     
 }

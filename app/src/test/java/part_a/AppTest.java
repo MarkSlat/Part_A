@@ -6,6 +6,8 @@ package part_a;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.sql.Date;
+
 import org.joda.time.DateTime;
 
 class AppTest {
@@ -32,6 +34,13 @@ class AppTest {
 
         Mark.addModules(SoftwareEngineering_III);
 
+        assertNotNull(Mark.getCourses());
+        assertNotNull(Mark.getCoursesNames());
+        assertNotNull(Mark.getModules());
+        assertNotNull(Mark.getModulesNames());
+
+        assertEquals("Mark", Mark.getName());
+
         assertNotNull(Mark.toString());
     }
 
@@ -41,6 +50,13 @@ class AppTest {
         Module SoftwareEngineering_III = new Module("Software engineering III", "CT417", Schukat);
 
         Schukat.addModules(SoftwareEngineering_III);
+
+        assertNotNull(Schukat.getMdulesTeachingNames());
+
+        assertEquals(1, Schukat.getAge());
+        assertEquals("29/09/2022", Schukat.getDOB());
+        assertEquals("IT402", Schukat.getID());
+        assertEquals("Michael Schukat", Schukat.getName());
 
         assertNotNull(Schukat.toString());
     }
@@ -56,6 +72,14 @@ class AppTest {
         CourseProgramme ECE = new CourseProgramme("ECE", DateTime.parse("2022-09-5T11:00"), DateTime.parse("2022-03-31T15:00"));
         SoftwareEngineering_III.addCourses(ECE);
 
+        assertNotNull(SoftwareEngineering_III.getCoursesNames());
+        assertEquals("CT417", SoftwareEngineering_III.getModuleID());
+        assertEquals(Schukat, SoftwareEngineering_III.getLecturerResponsible());
+        assertEquals("Software engineering III", SoftwareEngineering_III.getName());
+
+        assertNotNull(SoftwareEngineering_III.getStudents());
+        assertNotNull(SoftwareEngineering_III.getStudentsNames());      
+
         assertNotNull(SoftwareEngineering_III.toString());
     }
 
@@ -69,6 +93,15 @@ class AppTest {
         Module SoftwareEngineering_III = new Module("Software engineering III", "CT417", Schukat);
         ECE.addModules(SoftwareEngineering_III);
 
+        assertEquals("2022-03-31T15:00:00.000+01:00", ECE.getEndDate().toString());
+        assertEquals("2022-09-05T11:00:00.000+01:00", ECE.getStartDate().toString());
+        assertEquals("ECE", ECE.getName());
+
+        assertNotNull(ECE.getInfo());
+        assertNotNull(ECE.getModules());
+        assertNotNull(ECE.getModulesNames());
+        assertNotNull(ECE.getStudentsNames());
+    
         assertNotNull(ECE.toString());
     }
 }
