@@ -6,11 +6,69 @@ package part_a;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.joda.time.DateTime;
+
 class AppTest {
-    @Test void appTestForUsernames() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest.getStudentUsername(classUnderTest.getMark()));
-        assertNotNull(classUnderTest.getLectureUsername(classUnderTest.getSchukat()));
-        // assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+
+    @Test void testForStudentUsername() {
+        Student Mark = new Student("Mark", 21, "11/09/2001", 19459946);
+        assertEquals("Mark21", Mark.getUsername());
+    }
+
+    @Test void testForLectureUsername() {
+        Lecturer Schukat = new Lecturer("Michael Schukat", 1, "29/09/2022", "IT402");
+        assertEquals("Michael Schukat1", Schukat.getUsername());
+    }
+
+    @Test void testFullStudent() {
+        Student Mark = new Student("Mark", 21, "11/09/2001", 19459946);
+
+        CourseProgramme ECE = new CourseProgramme("ECE", DateTime.parse("2022-09-5T11:00"), DateTime.parse("2022-03-31T15:00"));
+        Mark.addCourses(ECE);
+
+        Lecturer Schukat = new Lecturer("Michael Schukat", 1, "29/09/2022", "IT402");
+
+        Module SoftwareEngineering_III = new Module("Software engineering III", "CT417", Schukat);
+
+        Mark.addModules(SoftwareEngineering_III);
+
+        assertNotNull(Mark.toString());
+    }
+
+    @Test void testFullLecture() {
+        Lecturer Schukat = new Lecturer("Michael Schukat", 1, "29/09/2022", "IT402");
+
+        Module SoftwareEngineering_III = new Module("Software engineering III", "CT417", Schukat);
+
+        Schukat.addModules(SoftwareEngineering_III);
+
+        assertNotNull(Schukat.toString());
+    }
+
+    @Test void testFullModule() {
+        Lecturer Schukat = new Lecturer("Michael Schukat", 1, "29/09/2022", "IT402");
+
+        Module SoftwareEngineering_III = new Module("Software engineering III", "CT417", Schukat);
+
+        Student Mark = new Student("Mark", 21, "11/09/2001", 19459946);
+        SoftwareEngineering_III.addStudents(Mark);
+
+        CourseProgramme ECE = new CourseProgramme("ECE", DateTime.parse("2022-09-5T11:00"), DateTime.parse("2022-03-31T15:00"));
+        SoftwareEngineering_III.addCourses(ECE);
+
+        assertNotNull(SoftwareEngineering_III.toString());
+    }
+
+    @Test void testFullCourse() {
+        CourseProgramme ECE = new CourseProgramme("ECE", DateTime.parse("2022-09-5T11:00"), DateTime.parse("2022-03-31T15:00"));
+
+        Student Mark = new Student("Mark", 21, "11/09/2001", 19459946);
+        ECE.addStudents(Mark);
+
+        Lecturer Schukat = new Lecturer("Michael Schukat", 1, "29/09/2022", "IT402");
+        Module SoftwareEngineering_III = new Module("Software engineering III", "CT417", Schukat);
+        ECE.addModules(SoftwareEngineering_III);
+
+        assertNotNull(ECE.toString());
     }
 }
