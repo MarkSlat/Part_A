@@ -29,9 +29,7 @@ public class App {
         SoftwareEngineering_III.addStudents(Mark);
         SoftwareEngineering_III.addCourses(ECE);
 
-        System.out.println(Mark.getUsername());
-        System.out.println(Schukat.getUsername());
-
+        System.out.println(Mark);
     }
 
 

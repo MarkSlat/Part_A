@@ -1,6 +1,7 @@
 package part_a;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Student {
@@ -17,7 +18,10 @@ public class Student {
         this.age = age;
         DOB = dOB;
         ID = iD;
-            
+    }
+
+    public String getName() {
+        return name;
     }
 
     public List<CourseProgramme> getCourses() {
@@ -26,6 +30,14 @@ public class Student {
 
     public void addCourses(CourseProgramme course) {
         courses.add(course);
+    }
+    
+    public String getCoursesNames() {
+        String s = "";
+        for (int i = 0; i < courses.size(); i++) {
+            s += courses.get(i).getName() + " ";
+        }
+        return s;
     }
 
     public List<Module> getModules() {
@@ -36,13 +48,21 @@ public class Student {
         modules.add(module);
     }
 
+    public String getModulesNames() {
+        String s = "";
+        for (int i = 0; i < modules.size(); i++) {
+            s += modules.get(i).getName() + " ";
+        }
+        return s;
+    }
+
     public String getUsername() {
         return name + Integer.toString(age);
     }
 
     @Override
     public String toString() {
-        return "Student: " + name + "\nID: " + ID + "\nUsername: " + getUsername() +"\nCourses: " + courses + "\nModules: " + modules;
+        return "Student: " + name + "\nID: " + ID + "\nUsername: " + getUsername() + "\nCourses: " + getCoursesNames() + "\nModules: " + getModulesNames();
     }
 
 }

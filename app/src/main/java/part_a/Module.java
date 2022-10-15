@@ -26,6 +26,14 @@ public class Module {
         return moduleID;
     }
 
+    public String getCoursesNames() {
+        String s = "";
+        for (int i = 0; i < courses.size(); i++) {
+            s += courses.get(i).getName() + " ";
+        }
+        return s;
+    }
+
     public Lecturer getLecturerResponsible() {
         return lecturerResponsible;
     }
@@ -46,10 +54,18 @@ public class Module {
         students.add(student);
     }
 
+    public String getStudentsNames() {
+        String s = "";
+        for (int i = 0; i < students.size(); i++) {
+            s += students.get(i).getName() + " ";
+        }
+        return s;
+    }
+
     @Override
     public String toString() {
-        return "Module: " + name + "\nModule ID:" + moduleID + "\nLecturer" + lecturerResponsible
-                + "\nCourses:" + courses + "\nStudents:" + students;
+        return "Module: " + name + "\nModule ID:" + moduleID + "\nLecturer: " + lecturerResponsible.getName()
+                + "\nCourses:" + getCoursesNames() + "\nStudents:" + getStudentsNames();
     }
 
 }
