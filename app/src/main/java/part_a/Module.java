@@ -64,8 +64,8 @@ public class Module {
 
     @Override
     public String toString() {
-        return "Module: " + name + "\nModule ID:" + moduleID + "\nLecturer: " + lecturerResponsible.getName()
-                + "\nCourses:" + getCoursesNames() + "\nStudents:" + getStudentsNames();
+        return "Module: " + name + "\nModule ID: " + moduleID + "\nLecturer: " + lecturerResponsible.getName()
+                + "\nCourses: " + getCoursesNames() + "\nStudents: " + getStudentsNames();
     }
 
 }

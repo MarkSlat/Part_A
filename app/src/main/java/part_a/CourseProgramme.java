@@ -74,8 +74,8 @@ public class CourseProgramme {
 
     @Override
     public String toString() {
-        return "Course Programme: " + name + "\nModules: " + Arrays.deepToString(modules.toArray()) + "\nStarting date: " + startDate + "\tEnd date: "
-                + endDate + "\nList of students enrolled:" + getStudentsNames();
+        return "Course Programme: " + name + "\nModules: " + getModulesNames() + "\nStarting date: " + startDate + "\tEnd date: "
+                + endDate + "\nList of students enrolled: " + getStudentsNames();
     }
 
 }

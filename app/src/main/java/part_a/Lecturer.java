@@ -57,7 +57,7 @@ public class Lecturer {
 
     @Override
     public String toString() {
-        return "Lecturer: " + name + "\nID" + ID + "\nUsername: " + getUsername() + "\nModules teaching: " + getmMdulesTeachingNames();
+        return "Lecturer: " + name + "\nID: " + ID + "\nUsername: " + getUsername() + "\nModules teaching: " + getmMdulesTeachingNames();
     }
     
 }

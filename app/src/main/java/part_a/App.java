@@ -13,10 +13,10 @@ public class App {
     private Module SoftwareEngineering_III;
 
     public App (){
-        create();
-    }
+        // create();
+    // }
 
-    public void create() {
+    // public void create() {
         // System.out.println(DateTime.now());
         Mark = new Student("Mark", 21, "11/09/2001", 19459946);
         ECE = new CourseProgramme("ECE", DateTime.parse("2022-09-5T11:00"), DateTime.parse("2022-03-31T15:00"));
@@ -24,12 +24,14 @@ public class App {
         SoftwareEngineering_III = new Module("Software engineering III", "CT417", Schukat);
         Mark.addCourses(ECE);
         Mark.addModules(SoftwareEngineering_III);
+        Schukat.addModules(SoftwareEngineering_III);
         ECE.addStudents(Mark);
         ECE.addModules(SoftwareEngineering_III);
         SoftwareEngineering_III.addStudents(Mark);
         SoftwareEngineering_III.addCourses(ECE);
 
-        System.out.println(Mark);
+        // System.out.println(ECE);
+        // System.out.println(SoftwareEngineering_III);
     }
 
 
@@ -50,6 +52,6 @@ public class App {
     }
 
     public static void main(String[] args) {
-        new App().create();
+        new App();
     }
 }
